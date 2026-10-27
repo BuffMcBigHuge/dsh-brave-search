@@ -1,0 +1,10 @@
+# Plugin bundle layer: mount the Brave provider.
+#
+# This deliberately does NOT touch the `web` entry's config. A profile patch
+# replaces an entry's config object wholesale, so writing `searchProvider` here
+# would silently drop a user's `fetchProvider` and re-introduce the
+# "multiple usable web providers" error. Pointing `web.searchProvider` at
+# `brave` is a one-line step in the README instead.
+- insert:
+    - id: brave-search
+      name: 'dsh-brave-search'
